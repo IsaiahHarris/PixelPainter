@@ -1,0 +1,15 @@
+#pixelPainter{
+    height:200px;
+    width:200px;
+    background-color:green;
+    display:flex;
+    flex-direction:row;
+    flex-wrap:wrap;
+}
+.cels{
+    display:flex;
+    flex-direction: row;
+    flex-wrap:wrap;
+    color:black;
+    justify-content: space-evenly;
+}
