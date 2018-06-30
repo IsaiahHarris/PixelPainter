@@ -1,7 +1,6 @@
 #pixelPainter{
     height:200px;
     width:200px;
-    background-color:green;
     display:flex;
     flex-direction:row;
     flex-wrap:wrap;
@@ -10,6 +9,6 @@
     display:flex;
     flex-direction: row;
     flex-wrap:wrap;
-    color:black;
     justify-content: space-evenly;
+    background-color:red;
 }
