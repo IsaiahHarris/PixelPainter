@@ -1,14 +1,27 @@
 #pixelPainter{
-    height:200px;
-    width:200px;
+    height:300px;
+    width:300px;
     display:flex;
     flex-direction:row;
     flex-wrap:wrap;
+    margin:0 auto;
 }
-.cels{
-    display:flex;
-    flex-direction: row;
-    flex-wrap:wrap;
-    justify-content: space-evenly;
-    background-color:red;
+
+.cells{
+    height: 15px;
+    width: 15px;
+    border:1px black solid;
+}
+
+.colorCells{
+    padding:15px;
+    margin: 0 auto;
+    height: 2px;
+    width:2px;
+    border:1px black solid;
+}
+#scream{
+    border:1px black solid;
+    height: 50px;
+    width:100px;
 }
