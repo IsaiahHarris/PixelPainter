@@ -2,10 +2,10 @@
 function PixelPainter(width, height) {
   let pixelPaintDiv = document.getElementById("pixelPainter")
   let screen = document.createElement('div');
-  let currentColor = '#000000';
+  let currentColor = '#FFFFFF';
   screen.className = 'scream';
   pixelPaintDiv.appendChild(screen);
-  let mouseDown = false;
+  let isMouseDown = false;
   let colorsArr = [
     { name: 'red', colur: '#FF0000' },
     { name: 'green', colur: '#00FF00' },
@@ -13,25 +13,34 @@ function PixelPainter(width, height) {
     { name: 'black', colur: '#000000' }
   ]
 
-  function createCanvas(gridSize) {
-    for (let i = 0; i < gridSize; i++) {
+  function createCanvas(width, height) {
+    for (let i = 0; i < height; i++) {
       let row = document.createElement('div');
       row.id = 'row';
-      for (let j = 0; j < gridSize; j++) {
+      for (let j = 0; j < width; j++) {
         var c = document.createElement("div");
         row.appendChild(c);
         c.className = "cells";
-        c.addEventListener('click', function(event){
-          event.target.style.backgroundColor = currentColor
+        c.addEventListener('mousedown', function (event) {
+          event.target.style.backgroundColor = currentColor;
+          isMouseDown = true;
         })
+            c.addEventListener('mouseover', function(event){
+              if(isMouseDown === true){
+              event.target.style.backgroundColor = currentColor;
+              console.log(mouseDown);
+              }
+        })
+       
       }
       pixelPaintDiv.appendChild(row);
     }
+    
 
   }
-  createCanvas(7);
+  createCanvas(7,7);
 
-  function paint (){
+  function paint() {
     c[x].style.backgroundColor = colorsArr[i].colur;
   }
 
@@ -44,15 +53,11 @@ function PixelPainter(width, height) {
       colorCell.addEventListener('click', function () {
         screen.innerHTML = colorsArr[i].name;
         currentColor = colorsArr[i].colur;
-
       })
 
     }
   }
   createPallet(colorsArr);
-
 }
-
-
 
 PixelPainter(8, 8);
