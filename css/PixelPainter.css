@@ -1,6 +1,6 @@
 #pixelPainter{
-    height:350px;
-    width:350px;
+    height:100px;
+    width:375px;
     display:flex;
     flex-direction:row;
     flex-wrap:wrap;
@@ -12,16 +12,46 @@
     width: 15px;
     border:1px black solid;
 }
-
+.color-container{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content: :space-evenly
+    align-content:center;
+    height:100px;
+    width:400px;
+    border:1px solid black;
+    
+}
 .colorcell{
-    padding:15px;
     margin: 0 auto;
-    height: 5px;
-    width: 5px;
+    height: 30px;
+    width: 30px;
     border:1px black solid;
 }
 .scream{
     border:1px black solid;
     height: 50px;
     width:50px;
+}
+.clearButton{
+    border:1px black solid;
+    height: 30px;
+    width:30px;
+}
+.eraseButton{
+    border:1px black solid;
+    height:30px;
+    width:30px;
+}
+
+.buttonContainer{
+    border:1px black solid;
+    height:50px;
+    width:100px;
+}
+body{
+    display:flex;
+    flex-direction:row;
+    flex-wrap:wrap;
+
 }
