@@ -6,7 +6,7 @@ function PixelPainter(width, height) {
   screen.className = 'scream';
   pixelPaintDiv.appendChild(screen);
   let isMouseDown = false;
-  var rdCol = 'rgb(' + random(255) + ',' + random(255) + ',' + random(255) + ')';
+  let rdCol = 'rgb(' + random(253) + ',' + random(253) + ',' + random(253) + ')';
   let colorsArr = [
     { name: 'red', colur: '#FF0000' },
     { name: 'green', colur: '#00FF00' },
@@ -50,6 +50,9 @@ function PixelPainter(width, height) {
           }
         })
         c.addEventListener('mouseup', function () {
+          isMouseDown = false;
+        })
+        document.body.addEventListener('mouseup', function(){
           isMouseDown = false;
         })
       }
@@ -112,16 +115,7 @@ document.body.appendChild(colorDiv);
   function random(number) {
     return Math.floor(Math.random()*(number+1));
   }
-function backgroundColorChange() {
-  c = document.getElementsByClassName('cells')
-  screen.innerHTML = 'random';
-  var rdCol = 'rgb(' + random(255) + ',' + random(255) + ',' + random(255) + ')';
-  currentColor = rdCol;
-  }
-}
-function cray(){
-  setInterval(backgroundColorChange, 1000)
-} 
 
+}
 
 PixelPainter(8, 8);
