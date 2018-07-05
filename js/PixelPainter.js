@@ -51,7 +51,7 @@ function PixelPainter(width, height) {
         c.addEventListener('mouseup', function () {
           isMouseDown = false;
         })
-        document.body.addEventListener('mouseup', function(){
+        document.body.addEventListener('mouseup', function () {
           isMouseDown = false;
         })
       }
@@ -62,9 +62,9 @@ function PixelPainter(width, height) {
   }
   createCanvas(width, height);
 
-let colorDiv = document.createElement('div');
-colorDiv.className = 'color-container';
-document.body.appendChild(colorDiv);
+  let colorDiv = document.createElement('div');
+  colorDiv.className = 'color-container';
+  document.body.appendChild(colorDiv);
   function createPallet(colorsArr) {
     for (let i = 0; i < colorsArr.length; i++) {
       let colorCell = document.createElement('div');
@@ -83,7 +83,7 @@ document.body.appendChild(colorDiv);
   buttonContainer.className = 'buttonContainer';
   pixelPaintDiv.appendChild(buttonContainer);
   let clearButton = document.createElement('button')
-  clearButton.class= 'clearButton';
+  clearButton.class = 'clearButton';
   clearButton.innerHTML = 'clear';
   let eraseButton = document.createElement('button')
   eraseButton.class = 'eraseButton';
@@ -95,7 +95,7 @@ document.body.appendChild(colorDiv);
   buttonContainer.appendChild(eraseButton);
   buttonContainer.appendChild(randomColorButton);
 
-  randomColorButton.addEventListener('click', function(){
+  randomColorButton.addEventListener('click', function () {
     isRandom = true;
     screen.innerHTML = 'random'
     currentColor = 'rgb(' + random(360) + ',' + random(360) + ',' + random(360) + ')'
@@ -109,12 +109,12 @@ document.body.appendChild(colorDiv);
       c[i].style.backgroundColor = 'white';
     }
   }
-  function eraseFunc(){
+  function eraseFunc() {
     screen.innerHTML = 'eraser';
-        currentColor = 'white';
+    currentColor = 'white';
   }
   function random(number) {
-    return Math.floor(Math.random()*(number+1));
+    return Math.floor(Math.random() * (number + 1));
   }
 
 }
