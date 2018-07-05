@@ -6,6 +6,7 @@ function PixelPainter(width, height) {
   screen.className = 'scream';
   pixelPaintDiv.appendChild(screen);
   let isMouseDown = false;
+  let isRandom = false;
   let rdCol = 'rgb(' + random(253) + ',' + random(253) + ',' + random(253) + ')';
   let colorsArr = [
     { name: 'red', colur: '#FF0000' },
@@ -26,9 +27,7 @@ function PixelPainter(width, height) {
     { name: 'turquoise', colur: '#40E0D0' },
     { name: 'gold', colur: '#FFD700' },
     { name: 'chocolate', colur: '#D2691E' },
-    { name: 'smokeWhite', colur: '#F5F5F5' },
-    { name: 'rainbow', colur: rdCol
-  },
+    { name: 'smokeWhite', colur: '#DFDFDF' }
   ]
   var c;
   function createCanvas(width, height) {
@@ -61,7 +60,7 @@ function PixelPainter(width, height) {
 
 
   }
-  createCanvas(7, 7);
+  createCanvas(15, 15);
 
 let colorDiv = document.createElement('div');
 colorDiv.className = 'color-container';
@@ -97,7 +96,9 @@ document.body.appendChild(colorDiv);
   buttonContainer.appendChild(randomColorButton);
 
   randomColorButton.addEventListener('click', function(){
-    currentColor = 'rgb(' + random(253) + ',' + random(253) + ',' + random(253) + ')'
+    isRandom = true;
+    screen.innerHTML = 'random'
+    currentColor = 'rgb(' + random(360) + ',' + random(360) + ',' + random(360) + ')'
   })
   clearButton.addEventListener('click', clearFunc);
   eraseButton.addEventListener('click', eraseFunc);
