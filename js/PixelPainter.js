@@ -60,7 +60,7 @@ function PixelPainter(width, height) {
 
 
   }
-  createCanvas(15, 15);
+  createCanvas(width, height);
 
 let colorDiv = document.createElement('div');
 colorDiv.className = 'color-container';
@@ -119,4 +119,4 @@ document.body.appendChild(colorDiv);
 
 }
 
-PixelPainter(8, 8);
+PixelPainter(13, 13);
