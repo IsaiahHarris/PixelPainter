@@ -36,33 +36,38 @@ function PixelPainter(width, height) {
     for (let i = 0; i < height; i++) {
       let row = document.createElement('div');
       row.id = 'row';
+
       for (let j = 0; j < width; j++) {
         c = document.createElement("div");
         row.appendChild(c);
         c.className = "cells";
+
         c.addEventListener('mousedown', function (event) {
           event.target.style.backgroundColor = currentColor;
           isMouseDown = true;
         })
+
         c.addEventListener('mouseover', function (event) {
           if (isMouseDown === true) {
             event.target.style.backgroundColor = currentColor;
             console.log(mouseDown);
           }
         })
+
         c.addEventListener('mouseup', function () {
           isMouseDown = false;
         })
-        document.body.addEventListener('mouseup', function () {
-          isMouseDown = false;
-        })
       }
+
       pixelPaintDiv.appendChild(row);
     }
-
-
   }
+
   createCanvas(width, height);
+
+  document.body.addEventListener('mouseup', function () {
+    isMouseDown = false;
+  })
   //create color pallet
   let colorDiv = document.createElement('div');
   colorDiv.className = 'color-container';
@@ -84,36 +89,46 @@ function PixelPainter(width, height) {
   let buttonContainer = document.createElement('div');
   buttonContainer.className = 'buttonContainer';
   pixelPaintDiv.appendChild(buttonContainer);
+
   let clearButton = document.createElement('button')
   clearButton.className = 'clearButton';
   clearButton.innerHTML = 'clear';
+
   let eraseButton = document.createElement('button')
   eraseButton.className = 'eraseButton';
   eraseButton.innerHTML = 'erase';
+
   let randomColorButton = document.createElement('button');
   randomColorButton.className = 'randomColor';
   randomColorButton.innerHTML = 'randomColor';
+
   let noBorderButton = document.createElement('button');
   noBorderButton.innerHTML = 'noBorder';
   noBorderButton.className = 'noBorder';
 
+  let yesBorderButton = document.createElement('button');
+  yesBorderButton.innerHTML = 'yesBorder';
+  yesBorderButton.className = 'yesBorder';
+
+  buttonContainer.appendChild(yesBorderButton);
   buttonContainer.appendChild(clearButton);
   buttonContainer.appendChild(eraseButton);
   buttonContainer.appendChild(randomColorButton);
   buttonContainer.appendChild(noBorderButton)
   noBorderButton.addEventListener('click', function () {
-    for (let index = 0; index < cells.length; index++) {
-      cells[index].style.border = 'none';
-
+    for (let j = 0; j < cells.length; j++) {
+      cells[j].style.border = 'none';
     }
   });
-
-
+  yesBorderButton.addEventListener('click', function () {
+    console.log('hi');
+    for (let j = 0; j < cells.length; j++) {
+      cells[j].style.border = '1px solid black';
+    }
+  });
   randomColorButton.addEventListener('click', function () {
-    isRandom = true;
-    screen.innerHTML = 'random'
-    currentColor = 'rgb(' + random(360) + ',' + random(360) + ',' + random(360) + ')'
-  })
+    currentColor = 'rgb(' + random(255) + ',' + random(255) + ',' + random(255) + ')'
+  });
   clearButton.addEventListener('click', clearFunc);
   eraseButton.addEventListener('click', eraseFunc);
 
