@@ -1,14 +1,60 @@
 #pixelPainter{
-    height:200px;
-    width:200px;
+    height: 50px;
+    width:375px;
     display:flex;
     flex-direction:row;
     flex-wrap:wrap;
+    margin:0 auto;
+    margin-top:50px;
 }
-.cels{
+h1{
+    background-color: red;
+    margin:0 auto;
+    height: 4%;
+}
+.cells{
+    height: 15px;
+    width: 15px;
+    border:1px black solid;
+}
+.color-container{
     display:flex;
-    flex-direction: row;
-    flex-wrap:wrap;
+    flex-wrap:nowrap;
     justify-content: space-evenly;
-    background-color:red;
+    align-content:center;
+    height:100px;
+    width:300px;
+    
+}
+.colorcell{
+    margin: 0 auto;
+    height: 30px;
+    width: 30px;
+    border:1px black solid;
+}
+.scream{
+    height: 50px;
+    width:50px;
+}
+.clearButton{
+
+}
+.eraseButton{
+    
+}
+
+.buttonContainer{
+    height:50px;
+    width:100px;
+    display: flex;
+    flex-wrap: wrap;
+    border: dotted darkgoldenrod 5px;
+    align-content: center;
+    justify-content: center;
+    margin:0 auto;
+}
+body{
+    display:flex;
+    flex-direction:row;
+    flex-wrap:wrap;
 }
